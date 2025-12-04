@@ -31,15 +31,37 @@ function Dashboard() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function handleGetAvailableProduct() {
+    // Find first available product (with stock > 0)
+    const availableProduct = products.find((p) => p.stock > 0) || products[0];
+
+    // Placeholder: Return the product
+    // TODO: Add webhook integration here
+    console.log("Available product:", availableProduct);
+
+    // Return the product (ready for webhook integration)
+    return availableProduct;
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Our Products</h1>
-          <p className="mt-2 text-gray-600">
-            Browse our selection of {products.length} apparel products
-          </p>
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Our Products</h1>
+              <p className="mt-2 text-gray-600">
+                Browse our selection of {products.length} apparel products
+              </p>
+            </div>
+            <button
+              onClick={handleGetAvailableProduct}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors font-medium shadow-sm"
+            >
+              Get Available Product
+            </button>
+          </div>
           <p className="mt-1 text-sm text-gray-500">
             Showing {startIndex + 1}-{Math.min(endIndex, products.length)} of{" "}
             {products.length} products

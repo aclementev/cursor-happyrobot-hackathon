@@ -1,7 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Chatbot from './pages/Chatbot'
+import AdminDashboard from './pages/admin/Dashboard'
+import AdminOrders from './pages/admin/Orders'
+import AdminReturns from './pages/admin/Returns'
+import { AdminLayout } from './components/admin/AdminLayout'
 
 function App() {
   return (
@@ -11,6 +15,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/chat" element={<Chatbot />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Navigate to="/admin/dashboard" replace />} />
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="returns" element={<AdminReturns />} />
+        </Route>
       </Routes>
     </Router>
   )

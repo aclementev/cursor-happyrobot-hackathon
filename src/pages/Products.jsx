@@ -83,6 +83,55 @@ function Products() {
     setExpandedOrder(null);
   }
 
+  async function handleReturnProduct(order) {
+    try {
+      const requestBody = { product_id: "1234" };
+      console.log("Sending return request to webhook:", requestBody);
+      
+      // Make POST request to webhook with hardcoded product_id
+      const response = await fetch(
+        "https://workflows.platform.happyrobot.ai/hooks/m5uymwmub02b",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
+
+      console.log("Response status:", response.status, response.statusText);
+      
+      if (response.ok) {
+        let data;
+        try {
+          data = await response.json();
+        } catch (e) {
+          // If response is not JSON, try text
+          data = await response.text();
+        }
+        console.log("Return request successful:", data);
+        alert("Return request submitted successfully!");
+      } else {
+        let errorText;
+        try {
+          errorText = await response.text();
+        } catch (e) {
+          errorText = "No error details available";
+        }
+        console.error("Return request failed:", {
+          status: response.status,
+          statusText: response.statusText,
+          body: errorText,
+        });
+        alert(`Failed to submit return request (${response.status}). Please check the console for details.`);
+      }
+    } catch (error) {
+      console.error("Error submitting return request:", error);
+      alert(`An error occurred: ${error.message}`);
+    }
+  }
+
   function getStatusColor(status) {
     const colors = {
       pending: "bg-yellow-100 text-yellow-800",
@@ -206,9 +255,26 @@ function Products() {
                           <p className="text-sm text-gray-500">
                             {items.length} item{items.length !== 1 ? "s" : ""}
                           </p>
-                          <button className="text-indigo-600 hover:text-indigo-800 mt-2">
-                            {isExpanded ? "Hide" : "View"} Details
-                          </button>
+                          <div className="flex items-center gap-3 mt-2">
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleReturnProduct(order);
+                              }}
+                              className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors text-sm font-medium"
+                            >
+                              Return
+                            </button>
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleOrder(order.order_id);
+                              }}
+                              className="text-indigo-600 hover:text-indigo-800"
+                            >
+                              {isExpanded ? "Hide" : "View"} Details
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>

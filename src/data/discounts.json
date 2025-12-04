@@ -1,0 +1,28 @@
+[
+  {"discount_id":"DISC001","discount_code":"SAVE10","discount_type":"percentage","discount_amount":25,"valid_until":"2025-08-31 19:50:35"},
+  {"discount_id":"DISC002","discount_code":"WELCOME20","discount_type":"fixed_amount","discount_amount":48.07,"valid_until":"2025-07-25 19:50:35"},
+  {"discount_id":"DISC003","discount_code":"SUMMER25","discount_type":"percentage","discount_amount":40,"valid_until":"2026-04-05 19:50:35"},
+  {"discount_id":"DISC004","discount_code":"FALL15","discount_type":"percentage","discount_amount":40,"valid_until":"2026-01-25 19:50:35"},
+  {"discount_id":"DISC005","discount_code":"WINTER30","discount_type":"fixed_amount","discount_amount":46.18,"valid_until":"2026-02-14 19:50:35"},
+  {"discount_id":"DISC006","discount_code":"SPRING20","discount_type":"fixed_amount","discount_amount":25.98,"valid_until":"2026-02-20 19:50:35"},
+  {"discount_id":"DISC007","discount_code":"NEWUSER","discount_type":"fixed_amount","discount_amount":21.18,"valid_until":"2026-04-02 19:50:35"},
+  {"discount_id":"DISC008","discount_code":"LOYALTY15","discount_type":"percentage","discount_amount":50,"valid_until":"2026-04-03 19:50:35"},
+  {"discount_id":"DISC009","discount_code":"FLASH50","discount_type":"fixed_amount","discount_amount":46.14,"valid_until":"2026-03-19 19:50:35"},
+  {"discount_id":"DISC010","discount_code":"CLEARANCE40","discount_type":"percentage","discount_amount":30,"valid_until":"2026-01-10 19:50:35"},
+  {"discount_id":"DISC011","discount_code":"BIRTHDAY10","discount_type":"percentage","discount_amount":20,"valid_until":"2026-05-02 19:50:35"},
+  {"discount_id":"DISC012","discount_code":"VIP25","discount_type":"fixed_amount","discount_amount":18.28,"valid_until":"2025-08-04 19:50:35"},
+  {"discount_id":"DISC013","discount_code":"EARLYBIRD","discount_type":"fixed_amount","discount_amount":30.64,"valid_until":"2025-10-25 19:50:35"},
+  {"discount_id":"DISC014","discount_code":"BLACKFRIDAY","discount_type":"fixed_amount","discount_amount":16.58,"valid_until":"2026-05-17 19:50:35"},
+  {"discount_id":"DISC015","discount_code":"CYBERMONDAY","discount_type":"fixed_amount","discount_amount":25.74,"valid_until":"2026-03-04 19:50:35"},
+  {"discount_id":"DISC016","discount_code":"STUDENT15","discount_type":"percentage","discount_amount":15,"valid_until":"2026-04-08 19:50:35"},
+  {"discount_id":"DISC017","discount_code":"MILITARY20","discount_type":"percentage","discount_amount":30,"valid_until":"2025-12-19 19:50:35"},
+  {"discount_id":"DISC018","discount_code":"FIRSTORDER","discount_type":"percentage","discount_amount":50,"valid_until":"2026-05-24 19:50:35"},
+  {"discount_id":"DISC019","discount_code":"BULK25","discount_type":"percentage","discount_amount":50,"valid_until":"2025-07-12 19:50:35"},
+  {"discount_id":"DISC020","discount_code":"REFERRAL30","discount_type":"percentage","discount_amount":10,"valid_until":"2025-12-06 19:50:35"},
+  {"discount_id":"DISC021","discount_code":"HOLIDAY20","discount_type":"percentage","discount_amount":30,"valid_until":"2025-12-19 19:50:35"},
+  {"discount_id":"DISC022","discount_code":"ENDSEASON","discount_type":"fixed_amount","discount_amount":34.67,"valid_until":"2025-10-21 19:50:35"},
+  {"discount_id":"DISC023","discount_code":"NEWYEAR","discount_type":"fixed_amount","discount_amount":5.53,"valid_until":"2026-02-12 19:50:35"},
+  {"discount_id":"DISC024","discount_code":"VALENTINE","discount_type":"fixed_amount","discount_amount":5.77,"valid_until":"2026-05-25 19:50:35"},
+  {"discount_id":"DISC025","discount_code":"EASTER15","discount_type":"fixed_amount","discount_amount":41.28,"valid_until":"2025-12-31 19:50:35"}
+]
+
