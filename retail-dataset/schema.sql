@@ -97,6 +97,26 @@ CREATE TABLE return_lines (
     INDEX idx_order_line_id (order_line_id)
 );
 
+-- Outfits Table (for outfit recommendations)
+CREATE TABLE outfits (
+    outfit_id VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    upper_body_product_id VARCHAR(20) NOT NULL,
+    lower_body_product_id VARCHAR(20) NOT NULL,
+    accessory_product_id VARCHAR(20) NOT NULL,
+    occasion VARCHAR(50),
+    description TEXT,
+    created_at DATETIME NOT NULL,
+    FOREIGN KEY (upper_body_product_id) REFERENCES products(product_id) ON DELETE RESTRICT,
+    FOREIGN KEY (lower_body_product_id) REFERENCES products(product_id) ON DELETE RESTRICT,
+    FOREIGN KEY (accessory_product_id) REFERENCES products(product_id) ON DELETE RESTRICT,
+    INDEX idx_occasion (occasion),
+    INDEX idx_upper_body (upper_body_product_id),
+    INDEX idx_lower_body (lower_body_product_id),
+    INDEX idx_accessory (accessory_product_id),
+    INDEX idx_created_at (created_at)
+);
+
 -- Additional Views for Common Queries
 
 -- View: Order Summary with User Info
@@ -148,4 +168,29 @@ LEFT JOIN return_lines rl ON r.return_id = (
     SELECT return_id FROM returns WHERE order_id = r.order_id LIMIT 1
 )
 GROUP BY r.return_id, r.order_id, r.return_amount, r.status, r.reason, r.created_at, o.user_id;
+
+-- View: Outfit Details with Product Info
+CREATE VIEW outfit_details AS
+SELECT 
+    o.outfit_id,
+    o.name AS outfit_name,
+    o.occasion,
+    o.description,
+    o.created_at,
+    pu.product_id AS upper_body_id,
+    pu.name AS upper_body_name,
+    pu.category AS upper_body_category,
+    pu.color AS upper_body_color,
+    pl.product_id AS lower_body_id,
+    pl.name AS lower_body_name,
+    pl.category AS lower_body_category,
+    pl.color AS lower_body_color,
+    pa.product_id AS accessory_id,
+    pa.name AS accessory_name,
+    pa.category AS accessory_category,
+    pa.color AS accessory_color
+FROM outfits o
+JOIN products pu ON o.upper_body_product_id = pu.product_id
+JOIN products pl ON o.lower_body_product_id = pl.product_id
+JOIN products pa ON o.accessory_product_id = pa.product_id;
 

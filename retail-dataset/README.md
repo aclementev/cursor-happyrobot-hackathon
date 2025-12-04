@@ -27,6 +27,7 @@ The script will create the following CSV files:
 5. **returns.csv** - Return records
 6. **return_lines.csv** - Return line items
 7. **discounts.csv** - Discount codes (25 codes)
+8. **outfits.csv** - Outfit recommendations (100 outfits) - Run `python3 generate_outfits.py` to generate
 
 ## Data Consistency
 
