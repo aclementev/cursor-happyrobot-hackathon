@@ -1,0 +1,22 @@
+return_id,order_id,return_amount,status,reason,created_at
+RET0001,ORD00065,39.74,approved,Quality issues,2025-07-24 19:50:35
+RET0002,ORD00029,723.7,refunded,Defective item,2025-06-21 19:50:35
+RET0003,ORD00120,564.81,pending,Wrong size,2025-08-15 19:50:35
+RET0004,ORD00172,402.5,approved,Wrong size,2025-05-22 19:50:35
+RET0005,ORD00038,284.16,pending,Changed mind,2025-05-28 19:50:35
+RET0006,ORD00237,52.71,approved,Too large,2025-03-13 19:50:35
+RET0007,ORD00208,688.74,pending,Not as described,2025-11-12 19:50:35
+RET0008,ORD00080,918.13,pending,Not as described,2025-03-30 19:50:35
+RET0009,ORD00085,517.92,pending,Arrived damaged,2024-12-24 19:50:35
+RET0010,ORD00108,672.25,approved,Arrived damaged,2025-06-09 19:50:35
+RET0011,ORD00164,173.33,pending,Too large,2025-11-17 19:50:35
+RET0012,ORD00010,659.46,pending,Arrived damaged,2025-10-23 19:50:35
+RET0013,ORD00054,414.88,refunded,Not as described,2025-03-31 19:50:35
+RET0014,ORD00300,141.8,approved,Quality issues,2025-03-30 19:50:35
+RET0015,ORD00106,529.92,approved,Too small,2024-12-15 19:50:35
+RET0016,ORD00165,112.66,refunded,Changed mind,2025-07-25 19:50:35
+RET0017,ORD00194,486.5,approved,Too large,2025-05-08 19:50:35
+RET0018,ORD00020,823.41,pending,Defective item,2025-11-28 19:50:35
+RET0019,ORD00089,171.88,refunded,Changed mind,2025-05-08 19:50:35
+RET0020,ORD00202,100.49,pending,Too small,2025-12-09 19:50:35
+RET0021,ORD00044,517.92,pending,Defective item,2025-06-11 19:50:35
