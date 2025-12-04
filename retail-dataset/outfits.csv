@@ -1,0 +1,12 @@
+outfit_id,name,upper_body_product_id,lower_body_product_id,accessory_product_id,occasion,description,created_at
+OUTFIT0001,Casual Classic Tee & Relaxed Fit Outfit,PROD00001,PROD00026,PROD00093,casual,A stylish casual outfit featuring a purple classic tee paired with orange relaxed fit, completed with navy loafers.,2025-01-22 19:50:35
+OUTFIT0002,Weekend Polo Shirt & Skinny Jeans Outfit,PROD00008,PROD00028,PROD00104,weekend,Perfect for weekend occasions, this ensemble combines a red polo shirt with orange skinny jeans and gray sneakers.,2025-01-22 19:50:35
+OUTFIT0003,Business Casual V-Neck T-Shirt & Bootcut Jeans Outfit,PROD00007,PROD00027,PROD00110,business casual,An elegant business casual look with a white v-neck t-shirt, brown bootcut jeans, and brown loafers for a complete outfit.,2025-01-22 19:50:35
+OUTFIT0004,Sporty Long Sleeve Tee & Athletic Shorts Outfit,PROD00010,PROD00168,PROD00106,sporty,A stylish sporty outfit featuring a pink long sleeve tee paired with red athletic shorts, completed with navy sneakers.,2025-01-22 19:50:35
+OUTFIT0005,Formal Denim Jacket & Dress Pants Outfit,PROD00071,PROD00210,PROD00101,formal,Perfect for formal occasions, this ensemble combines a blue denim jacket with red dress pants and brown heels.,2025-01-22 19:50:35
+OUTFIT0006,Date Night Leather Jacket & Skinny Jeans Outfit,PROD00072,PROD00031,PROD00105,date night,An elegant date night look with a brown leather jacket, black skinny jeans, and black heels for a complete outfit.,2025-01-22 19:50:35
+OUTFIT0007,Work Pullover Sweater & Chinos Outfit,PROD00154,PROD00225,PROD00123,work,A stylish work outfit featuring a red pullover sweater paired with orange chinos, completed with gray watch.,2025-01-22 19:50:35
+OUTFIT0008,Travel Bomber Jacket & Cargo Pants Outfit,PROD00079,PROD00220,PROD00100,travel,Perfect for travel occasions, this ensemble combines an orange bomber jacket with white cargo pants and navy boots.,2025-01-22 19:50:35
+OUTFIT0009,Party Graphic Hoodie & Joggers Outfit,PROD00238,PROD00211,PROD00111,party,An elegant party look with a black graphic hoodie, yellow joggers, and red sneakers for a complete outfit.,2025-01-22 19:50:35
+OUTFIT0010,Everyday Cardigan & A-Line Skirt Outfit,PROD00146,PROD00187,PROD00099,everyday,A stylish everyday outfit featuring a beige v-neck sweater paired with khaki a-line skirt, completed with white heels.,2025-01-22 19:50:35
+

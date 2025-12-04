@@ -210,3 +210,71 @@ LEFT JOIN return_lines rl ON r.return_id = (
 GROUP BY r.return_id, r.order_id, r.return_amount, r.reason, o.user_id;
 ```
 
+---
+
+### 8. outfits
+
+Stores suggested full outfit combinations for recommendations.
+
+| Column | Type | Constraints | Description |
+|--------|------|-------------|-------------|
+| outfit_id | VARCHAR(20) | PRIMARY KEY | Unique outfit identifier (e.g., OUTFIT0001) |
+| name | VARCHAR(255) | NOT NULL | Outfit name/description |
+| upper_body_product_id | VARCHAR(20) | NOT NULL, FK → products | Upper body product (T-Shirts, Sweaters, Hoodies, Jackets, Blazers) |
+| lower_body_product_id | VARCHAR(20) | NOT NULL, FK → products | Lower body product (Jeans, Pants, Shorts, Skirts) |
+| accessory_product_id | VARCHAR(20) | NOT NULL, FK → products | Accessory product (Accessories, Shoes) |
+| occasion | VARCHAR(50) | | Occasion type (casual, business casual, formal, sporty, etc.) |
+| description | TEXT | | Outfit description |
+| created_at | DATETIME | NOT NULL | Outfit creation timestamp |
+
+**Foreign Keys:**
+- `upper_body_product_id` references `products(product_id)` ON DELETE RESTRICT
+- `lower_body_product_id` references `products(product_id)` ON DELETE RESTRICT
+- `accessory_product_id` references `products(product_id)` ON DELETE RESTRICT
+
+**Indexes:**
+- `idx_occasion` on `occasion`
+- `idx_upper_body` on `upper_body_product_id`
+- `idx_lower_body` on `lower_body_product_id`
+- `idx_accessory` on `accessory_product_id`
+- `idx_created_at` on `created_at`
+
+---
+
+## Updated Relationships
+
+```
+users (1) ────< (many) orders
+orders (1) ────< (many) order_lines
+order_lines (1) ────< (many) return_lines
+orders (1) ────< (many) returns
+products (1) ────< (many) order_lines
+products (1) ────< (many) outfits (upper_body)
+products (1) ────< (many) outfits (lower_body)
+products (1) ────< (many) outfits (accessory)
+discounts (1) ────< (many) orders (optional)
+```
+
+## Additional Sample Queries
+
+### Get outfit recommendations by occasion
+```sql
+SELECT o.outfit_id, o.name, o.occasion,
+       pu.name AS upper_body,
+       pl.name AS lower_body,
+       pa.name AS accessory
+FROM outfits o
+JOIN products pu ON o.upper_body_product_id = pu.product_id
+JOIN products pl ON o.lower_body_product_id = pl.product_id
+JOIN products pa ON o.accessory_product_id = pa.product_id
+WHERE o.occasion = 'casual'
+ORDER BY o.created_at DESC;
+```
+
+### Get complete outfit details
+```sql
+SELECT * FROM outfit_details
+WHERE occasion = 'business casual'
+ORDER BY created_at DESC;
+```
+
